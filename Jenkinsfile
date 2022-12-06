@@ -10,7 +10,7 @@ pipeline {
                 sh 'whoami'
                 sh 'pwd'
                 sh 'ls -la'
-                sh 'docker build -t locthp/testing:1.0 .'
+                sh 'docker build -t locthp/testing:2.0 .'
             }
         }
         stage("Login-to-dockerhub")
@@ -21,7 +21,7 @@ pipeline {
         }
         stage("Push-to-dockerhub"){
             steps{
-                sh 'docker push locthp/testing:1.0'
+                sh 'docker push locthp/testing:2.0'
             }
         }
         stage("Copy-deployment-to-k8s")
