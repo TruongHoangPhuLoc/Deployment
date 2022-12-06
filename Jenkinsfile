@@ -24,5 +24,12 @@ pipeline {
                 sh 'docker push locthp/testing:1.0'
             }
         }
+        stage("Copy-deployment-to-k8s")
+        {
+            step{
+                sh 'scp deployment.yaml administrator@172.16.77.152:/'
+                sh 'ssh administrator@172.16.77.152 "ls -la"'
+            }
+        }
     }
 }
