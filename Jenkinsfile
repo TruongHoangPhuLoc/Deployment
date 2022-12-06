@@ -7,6 +7,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'whoami'
+                sh 'pwd'
                 sh 'ls -la'
                 sh 'docker build -t locthp/testing:1.0 .'
             }
