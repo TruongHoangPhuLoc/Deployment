@@ -33,7 +33,7 @@ pipeline {
         }
         stage("Deploy-to-k8s"){
             steps{
-                sh 'ssh administrator@172.16.77.158 kubectl apply -f deployment.yaml'
+                sh 'ssh administrator@172.16.77.158 "kubectl create -f deployment.yaml;kubectl apply -f deployment.yaml"'
             }
         }
     }
