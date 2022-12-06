@@ -27,7 +27,7 @@ pipeline {
         stage("Copy-deployment-to-k8s")
         {
             steps{
-                sh 'scp deployment.yaml administrator@172.16.77.158:/'
+                sh 'scp deployment.yaml administrator@172.16.77.158:/home/administrator/'
                 sh 'ssh administrator@172.16.77.158 "ls -la"'
             }
         }
